@@ -6,8 +6,8 @@
             <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%X{traceLogId}] [%file:%line] - %msg%n" />
         </Console>
 
-        <RollingRandomAccessFile name="Running-log" fileName="${log4j2.path}.log"
-                                 filePattern="${log4j2.path}-%d{yyyy-MM-dd}.%i.log">
+        <RollingRandomAccessFile name="Running-log" fileName="/log/iorange/application.log"
+                                 filePattern="/log/iorange/application-%d{yyyy-MM-dd}.%i.log">
             <PatternLayout
                     pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%X{traceLogId}] [%file:%line] - %msg%n" />
             <Policies>
