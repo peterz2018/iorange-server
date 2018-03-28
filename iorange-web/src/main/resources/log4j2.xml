@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off" monitorInterval="1800">
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%X{traceLogId}] [%file:%line] - %msg%n" />
+        </Console>
+
+        <RollingRandomAccessFile name="Running-log" fileName="${log4j2.path}.log"
+                                 filePattern="${log4j2.path}-%d{yyyy-MM-dd}.%i.log">
+            <PatternLayout
+                    pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%X{traceLogId}] [%file:%line] - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.springframework" level="error"/>
+        <Logger name="org.eclipse.jetty" level="error"/>
+        <Logger name="com.mchange.v2.log.slf4j.Slf4jMLog" level="error"/>
+        <Logger name="org.thymeleaf" level="error"/>
+        <Logger name="org.apache.zookeeper" level="error"/>
+        <Logger name="com.alibaba.dubbo" level="error"/>
+
+        <Logger name="com.iorange" level="debug"/>
+
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>

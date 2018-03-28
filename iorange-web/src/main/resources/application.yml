@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: iorange-web
+  thymeleaf:
+    cache: false
+  main:
+    banner-mode: off
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+server:
+  port: 8088
+  context-path: /iorange
+security:
+  user:
+    name: admin
+    password: admin
