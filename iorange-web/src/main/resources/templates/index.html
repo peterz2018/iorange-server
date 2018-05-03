@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="keywords" content="admin, dashboard, bootstrap, template, flat, modern, theme, responsive, fluid, retina, backend, html5, css, css3">
-  <meta name="description" content="">
-  <meta name="author" content="ThemeBucket">
-  <link rel="shortcut icon" href="#" type="image/png">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>IOrange</title>
+    <title>IORANGE</title>
+    <link href="http://fonts.googleapis.com/css?family=Raleway:500,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../static/css/style.css" th:href="@{/css/style.css}">
+    <!--<link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">-->
+    <link rel="stylesheet" href="../../static/css/highlight/dracula.css" th:href="@{/css/highlight/dracula.css}">
 
-</head>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.js" th:src="@{/js/html5shiv.js}"></script>
+    <![endif]-->
 
-<body class="sticky-header">
+<body>
+        <!-- header section start-->
+        <div th:replace="fragments/headerSection :: header_section">
+            <p>HeaderSection goes here...</p>
+        </div>
+        <!-- header section end-->
 
-<section>
-  <div>
-    <h3>
-      <a th:href="${ctx}">JAVA8</a>
-      <a th:href="${ctx}">JAVA9</a>
-      <a th:href="${ctx}">JAVA10</a>
-    </h3>
-  </div>
-</section>
+        <!-- left side start-->
+        <div th:replace="fragments/leftSide :: left_side">
+            <p>LeftSide goes here...</p>
+        </div>
+        <!-- left side end-->
 
+        <!-- content start -->
+        <div layout:fragment="page_content">
+            <p>Content goes here...</p>
+        </div>
+        <!-- content end -->
 </body>
 </html>

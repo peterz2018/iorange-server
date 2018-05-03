@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iorange.dal.mapper.DirectoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.iorange.dal.model.DirectoryDO">
+        <result column="id"                 property="id"               jdbcType="BIGINT" />
+        <result column="dir_name"           property="dirName"          jdbcType="VARCHAR" />
+        <result column="dir_level"          property="dirLevel"         jdbcType="VARCHAR" />
+        <result column="parent_id"          property="parentId"         jdbcType="BIGINT" />
+        <result column="status"             property="status"           jdbcType="VARCHAR" />
+        <result column="url"                property="url"              jdbcType="VARCHAR" />
+        <result column="dir_type"           property="dirType"          jdbcType="VARCHAR" />
+        <result column="remark"             property="remark"           jdbcType="VARCHAR" />
+        <result column="created_at"         property="createdAt"        jdbcType="TIMESTAMP" />
+        <result column="updated_at"         property="updatedAt"        jdbcType="TIMESTAMP" />
+        <result column="created_by"         property="createdBy"        jdbcType="VARCHAR" />
+        <result column="updated_by"         property="updatedBy"        jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+        dir_name,
+        dir_level,
+        parent_id,
+        status,
+        url,
+        dir_type,
+        remark,
+        created_at,
+        created_by,
+        updated_at,
+        updated_by
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.iorange.dal.model.DirectoryDO">
+        INSERT INTO
+            t_directory
+        (
+            dir_name,
+            dir_level,
+            parent_id,
+            status,
+            url,
+            dir_type,
+            remark,
+            created_at,
+            created_by,
+            updated_at,
+            updated_by
+        ) VALUES (
+            #{dirName,jdbcType=VARCHAR},
+            #{dirLevel,jdbcType=VARCHAR},
+            #{parentId,jdbcType=BIGINT},
+            #{status,jdbcType=VARCHAR},
+            #{url,jdbcType=VARCHAR},
+            #{dirType,jdbcType=VARCHAR},
+            #{remark,jdbcType=VARCHAR},
+            NOW(),
+            #{createdBy,jdbcType=VARCHAR},
+            NOW()
+            #{updatedBy,jdbcType=VARCHAR},
+        )
+    </insert>
+</mapper>

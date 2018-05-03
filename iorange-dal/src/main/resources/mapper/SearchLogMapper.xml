@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iorange.dal.mapper.SearchLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.iorange.dal.model.SearchLogDO">
+        <result column="id"                 property="id"               jdbcType="BIGINT" />
+        <result column="search_val"         property="searchVal"        jdbcType="VARCHAR" />
+        <result column="created_at"         property="createdAt"        jdbcType="TIMESTAMP" />
+        <result column="created_by"         property="createdBy"        jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+        search_val,
+        created_at,
+        created_by
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.iorange.dal.model.SearchLogDO">
+        INSERT INTO 
+            t_search_log
+        (
+            search_val,
+            created_at,
+            created_by
+        ) VALUES (
+            #{searchVal,jdbcType=VARCHAR},
+            NOW(),
+            #{createdBy,jdbcType=VARCHAR}
+        )
+    </insert>
+</mapper>

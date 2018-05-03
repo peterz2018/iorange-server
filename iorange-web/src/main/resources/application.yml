@@ -3,6 +3,9 @@ spring:
     name: iorange-web
   thymeleaf:
     cache: false
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
   main:
     banner-mode: off
   http:
@@ -13,7 +16,4 @@ spring:
 server:
   port: 8088
   context-path: /iorange
-security:
-  user:
-    name: admin
-    password: admin
+
