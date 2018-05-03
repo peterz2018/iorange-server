@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="ThemeBucket">
+    <meta name="author" content="Peter">
     <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>IORANGE</title>
-    <link href="http://fonts.googleapis.com/css?family=Raleway:500,500" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../../static/css/style.css" th:href="@{/css/style.css}">
-    <!--<link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">-->
+    <title>IOrange</title>
+    <!--<link rel="stylesheet" href="../../static/css/style.css" th:href="@{/css/style.css}">-->
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="../../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}">
     <link rel="stylesheet" href="../../static/css/highlight/dracula.css" th:href="@{/css/highlight/dracula.css}">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,13 +21,13 @@
 
 <body>
         <!-- header section start-->
-        <div th:replace="fragments/headerSection :: header_section">
+        <div th:replace="header :: header_section">
             <p>HeaderSection goes here...</p>
         </div>
         <!-- header section end-->
 
         <!-- left side start-->
-        <div th:replace="fragments/leftSide :: left_side">
+        <div th:replace="left :: left_side">
             <p>LeftSide goes here...</p>
         </div>
         <!-- left side end-->
@@ -37,5 +37,7 @@
             <p>Content goes here...</p>
         </div>
         <!-- content end -->
+
+<script src="../../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
 </body>
 </html>
