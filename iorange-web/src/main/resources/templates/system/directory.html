@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Peter">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>目录</title>
-</head>
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layoutPage}">
 <body>
-    <h2>我是目录页面</h2>
+<section>
+    <th:block layout:fragment="page_content">
+        <h2>我是目录页面</h2>
+    </th:block>
+</section>
+
+<th:block layout:fragment="page_script">
+</th:block>
 </body>
 </html>

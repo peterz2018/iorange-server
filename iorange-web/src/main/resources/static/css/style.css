@@ -1,38 +1,14 @@
-
-/** Header Start **/
-
-.header {
-    width: 220px;
-    position: absolute;
-    background: #424f63;
-    top: 0;
-    left: 0;
+#header-section {
+    border-right: 1px solid #dddddd;
+    overflow: hidden;
 }
 
-.sticky-header {
-    position: fixed;
-    height: 100%;
-    overflow-y: auto;
-    z-index: 100;
+#left-section {
+    border-right: 1px solid #dddddd;
+    overflow-x: hidden;
 }
 
-/** Header End **/
-
-/** Left Side Start **/
-
-.left-side {
-    width: 330px;
-    position: absolute;
-    background: #424f63;
-    top: 0;
-    left: 0;
+#leftMenu {
+    padding-left: 10px;
+    overflow-x: hidden;
 }
-
-.sticky-left-side {
-    position: fixed;
-    height: 100%;
-    overflow-y: auto;
-    z-index: 100;
-}
-
-/** Left Side End **/
